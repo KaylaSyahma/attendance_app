@@ -17,41 +17,17 @@ class HomeScreen extends StatelessWidget {
         }
         _onWillPop;
       },
-      child:  Scaffold(
+      child: Scaffold(
         backgroundColor: Colors.white,
-        body:  SafeArea(
+        body: SafeArea(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  margin: const EdgeInsets.all(20),
-                  child: Expanded(
-                    child: InkWell(
-                      highlightColor: Colors.transparent,
-                      splashColor: Colors.transparent,
-                      onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const Attendance()));
-                      },
-                      child: const Column(
-                        children: [
-                          Image(
-                            image: AssetImage('/asset/images/attend.png',),
-                          height: 100,
-                          width: 100,
-                          ),
-                          SizedBox(height: 10,),
-                          Text("Attendance Report",
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold
-                          ),)
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 40,)
+                _buildMenuItem(context),
+                SizedBox(
+                  height: 40,
+                )
               ],
             ),
           ),
@@ -60,38 +36,84 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Widget _buildMenuItem(
+    BuildContext context, {
+      required String imagePath,
+      required String label,
+      required Widget destination,
+    }
+    ) {
+    return Container(
+                margin: const EdgeInsets.all(20),
+                child: Expanded(
+                  child: InkWell(
+                    highlightColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => destination));
+                    },
+                    child:  Column(
+                      children: [
+                        Image(
+                          image: AssetImage(
+                            imagePath,
+                          ),
+                          height: 100,
+                          width: 100,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          label,
+                          style: const TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              );
+  }
+
   Future<bool> _onWillPop(BuildContext context) async {
     return (await showDialog(
-        //biar klo popupnya muncul, klo dipencet selain popup, popupnya ga ilang jdi harus dipencet exitnya
-        barrierDismissible: false,
-        context: context,
-        builder: (context) => AlertDialog(
-              title: const Text(
-                'INFORMATION',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
-              content: const Text(
-                "Do you want to exit this app?",
-                style: TextStyle(color: Colors.black, fontSize: 16),
-              ),
-              actions: [
-                TextButton(
-                    onPressed: () => Navigator.of(context).pop(false),
-                    child: const Text(
-                      "No",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
-                    )),
-                TextButton(
-                    // untuk keluar dri aplikasi
-                    onPressed: () => SystemNavigator.pop(),
-                    child: const Text(
-                      "Yes",
-                      style: TextStyle(color: Colors.black, fontSize: 14),
-                    )),
-              ],
-            )));
+            //biar klo popupnya muncul, klo dipencet selain popup, popupnya ga ilang jdi harus dipencet exitnya
+            barrierDismissible: false,
+            context: context,
+            builder: (context) => AlertDialog(
+                  title: const Text(
+                    'INFORMATION',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  content: const Text(
+                    "Do you want to exit this app?",
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ),
+                  actions: [
+                    TextButton(
+                        onPressed: () => Navigator.of(context).pop(false),
+                        child: const Text(
+                          "No",
+                          style: TextStyle(color: Colors.black, fontSize: 14),
+                        )),
+                    TextButton(
+                        // untuk keluar dri aplikasi
+                        onPressed: () => SystemNavigator.pop(),
+                        child: const Text(
+                          "Yes",
+                          style: TextStyle(color: Colors.black, fontSize: 14),
+                        )),
+                  ],
+                ))
+        // ini adalah default value ketikia semua kode yang ada di blok alert
+        // dialog tidak tereksekusi karena beberapa hal
+        );
   }
 }
