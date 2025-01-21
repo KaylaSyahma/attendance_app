@@ -24,10 +24,33 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _buildMenuItem(context),
+                _buildMenuItem(
+                  context, 
+                  imagePath: '/asset/images/attend.png', 
+                  label: 'Attendance Report', 
+                  destination: Attendance(), 
+                ),
                 SizedBox(
                   height: 40,
-                )
+                ),
+                _buildMenuItem(
+                  context, 
+                  imagePath: '/asset/images/permission.png', 
+                  label: 'Permission Report', 
+                  destination: Attendance(), 
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                _buildMenuItem(
+                  context, 
+                  imagePath: '/asset/images/attend_history.png', 
+                  label: 'Attendance Report', 
+                  destination: Attendance(), 
+                ),
+                SizedBox(
+                  height: 40,
+                ),
               ],
             ),
           ),
