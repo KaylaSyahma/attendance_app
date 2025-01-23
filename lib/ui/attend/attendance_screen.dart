@@ -26,16 +26,16 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
   final CollectionReference dataCollection = FirebaseFirestore.instance.collection('attendance');
 
   @override
-  void initState(){
-    handleLocationPermission();
-    setDate();
-    setAttendStatus();
+  // void initState(){
+  //   handleLocationPermission();
+  //   setDate();
+  //   setAttendStatus();
 
-    if (image != null) {
-      isLoading = true;
-      getGeolocationPosition();
-    }
-  }
+  //   if (image != null) {
+  //     isLoading = true;
+  //     getGeolocationPosition();
+  //   }
+  // }
 
   @override // anotasi
   Widget build(BuildContext context) {
