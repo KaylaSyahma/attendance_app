@@ -29,5 +29,5 @@ Padding buildNameInputField(TextEditingController controllerName) {
         )
       ),
     ),
-  )
+  );
 }
