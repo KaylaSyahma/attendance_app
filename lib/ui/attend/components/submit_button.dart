@@ -23,7 +23,7 @@ Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextE
             borderRadius: BorderRadius.circular(20),
             onTap: () {
               if (image == null || controllerName.text.isEmpty) {
-                showSnackBar(context, message);
+                
               } else {
                 
               }
@@ -32,7 +32,7 @@ Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextE
         ),
       ),
     );
-  )
+  
 }
 
 void showSnackBar(BuildContext context, String message){
