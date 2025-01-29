@@ -40,18 +40,42 @@ Future<void> submitReport(BuildContext context, String address, String name, Str
       ScaffoldMessenger.of(context).showSnackBar( SnackBar(
         content:  Row(
           children: [
-            Icon(
+            const Icon(
               Icons.info_outline,
               color: Colors.white,
             ),
-            SizedBox(width: 10,),
+            const SizedBox(width: 10,),
             Expanded(
-              child: Text("Oops, $e", style: TextStyle(color: Colors.white),)
+              child: Text("Oops, $e", style: const TextStyle(color: Colors.white),)
             )
           ],
-        )
+        ),
+        backgroundColor: Colors.blueAccent,
+        shape: const StadiumBorder(),
+        behavior: SnackBarBehavior.floating,
       ));
     }
+    // untuk menampilkan error yang di trigger oleh sistem
+  }).catchError((error) {
+    // ignore: use_build_context_synchronously
+    ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+      content: Row(
+        children: [
+          Icon(Icons.error_outline, color: Colors.white,),
+          SizedBox(width: 10,),
+          Expanded(
+            child: Text(
+              "Oops, $error",
+              style: TextStyle(color: Colors.white,
+            )
+                    ,
+          ))],
+      ),
+      backgroundColor: Colors.blueAccent,
+      shape: StadiumBorder(),
+      behavior: SnackBarBehavior.floating,
+    ));
+    Navigator.of(context).pop();
   });
 }
 
