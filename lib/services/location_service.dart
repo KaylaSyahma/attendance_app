@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
-Future<void> getLocationPosition(BuildContext context, Function(Position) onPositionReceived) async{
+Future<void> getGeoLocationPosition(BuildContext context, Function(Position) onPositionReceived) async{
   // method yg dipunya sm geolocator. milih yang low karena biar hemat performance 
   // ignore: deprecated_member_use
   Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
