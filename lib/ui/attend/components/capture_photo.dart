@@ -9,34 +9,34 @@ import 'package:flutter/material.dart';
 
 Padding buildCapturePhotoSection(BuildContext context, Size size, XFile? image) {
   return Padding(
-    padding: EdgeInsets.fromLTRB(10, 20, 0, 20),
+    padding: const EdgeInsets.fromLTRB(10, 20, 0, 20),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Capture Photo", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),),
+        const Text("Capture Photo", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),),
         GestureDetector( // KETIKA DI KLIK, DIA AKAN PERGI KE KAMERA
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => CameraScreen())
+              MaterialPageRoute(builder: (context) => const CameraScreen())
             );
           },
           child: Container(
-            margin: EdgeInsets.fromLTRB(10, 0, 10, 20),
+            margin: const EdgeInsets.fromLTRB(10, 0, 10, 20),
             width: size.width,
             height: 150,
             child: DottedBorder(
-              radius: Radius.circular(10),
+              radius: const Radius.circular(10),
               borderType: BorderType.RRect,
               color: Colors.blueAccent,
               strokeWidth: 1,
-              dashPattern: [5, 5],
+              dashPattern: const [5, 5],
               // 
               child: SizedBox.expand(
                 child: FittedBox(
                   child: image != null
                   ? Image.file(File(image.path), fit: BoxFit.cover,)
-                  : Icon(Icons.camera_enhance_outlined, color: Colors.blueAccent,),
+                  : const Icon(Icons.camera_enhance_outlined, color: Colors.blueAccent,),
                 )
               )
             ),
