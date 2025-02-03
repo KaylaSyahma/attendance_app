@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                   context, 
                   imagePath: '/asset/images/attend.png', 
                   label: 'Attendance Report', 
-                  destination: Attendance(), 
+                  destination: AttendanceScreen(), 
                 ),
                 SizedBox(
                   height: 40,
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                   context, 
                   imagePath: '/asset/images/permission.png', 
                   label: 'Permission Report', 
-                  destination: Attendance(), 
+                  destination: AttendanceScreen(), 
                 ),
                 SizedBox(
                   height: 40,
@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                   context, 
                   imagePath: '/asset/images/attend_history.png', 
                   label: 'Attendance Report', 
-                  destination: Attendance(), 
+                  destination: AttendanceScreen(), 
                 ),
                 SizedBox(
                   height: 40,
