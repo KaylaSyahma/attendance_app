@@ -33,7 +33,7 @@ Padding buildLocationsection(bool isLoading, String address){
                 alignLabelWithHint: true,
                 disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(Colors.blueAccent)
+                  borderSide: BorderSide(color: Colors.blueAccent)
                 ),
                 hintText: address.isNotEmpty ? address : "Your location",
                 hintStyle: TextStyle(

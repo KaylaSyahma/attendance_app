@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 // an entry point for submitting the attendance report
 final CollectionReference dataCollection = FirebaseFirestore.instance.collection('attendance');
 
-Future<void> submitReport(BuildContext context, String address, String name, String status, String timestamp) async{
+Future<void> submitReport(BuildContext context, String address, String name, String attendanceStatus, String timestamp) async{
   showLoaderDialog(context);
   dataCollection.add(
     {
       'Address' : address,
       'name' : name,
-      'status' : status,
+      'status' : attendanceStatus,
       'timestamp' : timestamp
     }
   ).then((result){

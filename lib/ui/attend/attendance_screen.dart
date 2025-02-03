@@ -55,6 +55,11 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    Size size = MediaQuery.of(context).size;
+
+    return const Scaffold(
+      backgroundColor: Colors.white,
+      // appBar: ,
+    );
   }
 }

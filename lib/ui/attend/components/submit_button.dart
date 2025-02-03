@@ -1,3 +1,4 @@
+import 'package:attendance_app/services/attendance_service.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -22,16 +23,19 @@ Container buildSubmitButton(BuildContext context, Size size, XFile? image, TextE
             splashColor: Colors.blue,
             borderRadius: BorderRadius.circular(20),
             onTap: () {
+              // klo misalkan imagenya kosong / namanya kosong
               if (image == null || controllerName.text.isEmpty) {
-                
+                showSnackBar(context, "Please fill all the forms!");
               } else {
-                
+                submitReport(context, address, controllerName.text.toString(), status, timestamp);
               }
-            }),
+            },
+            child: Text("Submit now", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
           ),
         ),
       ),
-    );
+    ),
+  );
   
 }
 
