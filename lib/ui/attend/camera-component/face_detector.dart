@@ -5,6 +5,7 @@ import 'package:attendance_app/utility/google_mlkit.dart';
 import 'package:camera/camera.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 
+// untuk mendeteksi koordinat wajah
 class FaceDetectorComponent{
   final FaceDetector faceDetector = GoogleMlkit.vision.faceDetector(FaceDetectorOptions(
     enableContours: true,
