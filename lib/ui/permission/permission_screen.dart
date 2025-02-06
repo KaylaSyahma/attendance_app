@@ -1,5 +1,9 @@
 import 'package:attendance_app/services/location_service.dart';
 import 'package:attendance_app/ui/permission/components/app_bar.dart';
+import 'package:attendance_app/ui/permission/components/form_body.dart';
+import 'package:attendance_app/ui/permission/components/form_header.dart';
+import 'package:attendance_app/ui/permission/components/submit_button.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -29,9 +33,16 @@ class _PermissionScreenState extends State<PermissionScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // buat komponen UI untuk form header
-              // buat komponen UI untuk form body
-              // buat komponen UI untuk form Submit button
+              FormHeader(title: "Permission request Form", icon: Icons.assignment),
+              FormBody(),
+              SubmitButton(
+                size: size,
+                nameController: TextEditingController(),
+                formController: TextEditingController(),
+                toController: TextEditingController(),
+                dropValueCategories: "Dropdown Content",
+                dataCollection: FirebaseFirestore.instance.collection('dataCollectionValue'),
+              )
             ],
           ),
         ),
