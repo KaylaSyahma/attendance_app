@@ -14,6 +14,6 @@ class _PermissionScreenState extends State<PermissionScreen> {
   }
 
   void requestPermission(){
-    // drop the code permission request here
+    
   }
 }
