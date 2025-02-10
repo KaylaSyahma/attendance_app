@@ -14,12 +14,12 @@ class SubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: SizedBox(
         width: size.width,
         child: ElevatedButton(
           onPressed: () => _submitHandler(context), 
-          child: Text("Submit"),
+          child: const Text("Submit"),
 
         ),
       ),
@@ -46,12 +46,12 @@ class SubmitButton extends StatelessWidget {
       content: Row(
         children: [
           Icon(icon, color: Colors.white,),
-          SizedBox(width: 10,),
-          Text(message, style: TextStyle(),)
+          const SizedBox(width: 10,),
+          Text(message, style: const TextStyle(),)
         ],
       ),
       backgroundColor: color,
-      shape: StadiumBorder(),
+      shape: const StadiumBorder(),
       behavior: SnackBarBehavior.floating,
     ));
   }
@@ -64,12 +64,12 @@ class SubmitButton extends StatelessWidget {
         return AlertDialog(
           content: Row(
             children: [
-              CircularProgressIndicator(
+              const CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(Colors.blueAccent),
               ),
               Container(
-                margin: EdgeInsets.only(left: 20),
-                child: Text("Please waitt"),
+                margin: const EdgeInsets.only(left: 20),
+                child: const Text("Please waitt"),
               )
             ],
           ),
@@ -96,7 +96,7 @@ class SubmitButton extends StatelessWidget {
       );
       Navigator.pushReplacement(
         context, 
-        MaterialPageRoute(builder: (context) => HomeScreen())
+        MaterialPageRoute(builder: (context) => const HomeScreen())
       );
     } catch (e) {
       Navigator.of(context).pop();
