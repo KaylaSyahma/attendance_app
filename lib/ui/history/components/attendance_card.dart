@@ -1,5 +1,5 @@
 import 'dart:math';
-
+// INI UNTUK UI
 import 'package:attendance_app/ui/history/components/delete_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -77,6 +77,5 @@ class AttendanceHistoryCard extends StatelessWidget {
         ),
       ),
     );
-    
   }
 }
