@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class DeleteDialog extends StatelessWidget {
   final String documentId;
   final CollectionReference dataCollection;
-  const DeleteDialog({super.key, required this.documentId, required this.dataCollection, required Null Function() onConfirm});
+  // onconfirm dikasih ? biar dia ga required di semua file. jadi sesuai kebutuhan
+  const DeleteDialog({super.key, required this.documentId, required this.dataCollection, Null Function()? onConfirm});
 
   @override
   Widget build(BuildContext context) {
